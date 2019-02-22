@@ -1,0 +1,858 @@
+<!DOCTYPE html>
+
+<HEAD>
+	<STYLE>
+table
+{
+
+	width:150px;
+}
+	td /* Toutes les cellules des tableaux... */
+	{	
+		
+		background: #ffcccc;
+		box-shadow: 1px 1px 0.5px grey;
+		width: 150px;
+	}
+	th {
+
+	}
+	.liquide
+	{	
+		box-shadow: 1px 1px 0.5px grey;
+		background: #b3ecff;
+		width: 150px; 
+	}
+	.gaz {
+		box-shadow: 1px 1px 0.5px grey;
+		background: #ffff99;
+		width: 150px; 
+		}
+	.eau
+	{
+		box-shadow: 1px 1px 0.5px grey;
+		background: #e0e0eb;
+		width: 150px; 
+	}
+	.ab {
+		font: 0.8rem 'Fira Sans', sans-serif;
+		text-align:left;
+		bottom = 0;
+		}
+
+	.cen
+	{
+		text-align :center;
+		font-weight:bold;
+	}
+	.mm 
+	{
+		font: 0.8rem 'Fira Sans', sans-serif;
+		text-align:right;
+		top = 0;
+	}
+	.val
+	{
+		color:red;
+		font-weight:bold;
+		background:none;
+		box-shadow:none;
+	}
+	.val_l
+	{	
+		background:none;	
+		box-shadow:none;
+		color:red;
+		font-weight:bold;
+		font-size: 0.8em
+	}
+
+	.bordure_vide
+	{
+		height:10px;
+		background:none;
+		box-shadow:none;
+	}
+	.texte
+	{
+		color:black;
+		font-size:0.9em;
+		font-weight:normal;
+		text-align:right;
+	}
+	.lanthanides {
+		box-shadow: 1px 1px 0.5px grey;
+		background: #ecffb3;
+		width: 150px; 
+		}
+	.actinides {
+		box-shadow: 1px 1px 0.5px grey;
+		background: #e6e6ff;
+		width: 150px; 
+		}
+	#lalu
+	{
+		text-align :center;
+		font-weight:bold;
+		font-size: 0.7em;
+	}
+	</STYLE>
+</HEAD>
+<BODY>
+	<p></p>
+	
+	<table>
+		<tr>
+		<td class="val_l" colspan=2>
+					<div>1</div>
+				</td>
+	<td class="val_l" colspan=16>
+					<div>2</div>
+				</td>
+
+			<td class="val_l">
+					<div>18</div>
+				</td>
+				</tr>
+		<!--ligne1-->
+			<td class="val_l">
+					<div>1</div>
+				</td>		
+				<td class="gaz">
+					<div class="mm"><sup>1.008</sup></div>
+					<div class="cen">H</div>	
+					<div class="ab"><sub>1</sub></div>
+				</td>
+				<td class="bordure_vide" colspan=11>
+					<div></div>
+				</td>
+				
+			<td class="val_l">
+					<div>13</div>
+				</td>
+				<td class="val_l">
+					<div>14</div>
+				</td>
+				<td class="val_l">
+					<div>15</div>
+				</td>
+				<td class="val_l">
+					<div>16</div>
+				</td>
+				<td class="val_l">
+					<div>17</div>
+				</td>
+	
+				<td class="liquide">
+					<div class="mm"><sup>4.0026</sup></div>
+					<div class="cen">He</div>	
+					<div class="ab"><sub>2</sub></div>
+				</td>
+		<!--ligne2-->
+<tr>
+	<td class="val_l">
+					<div>2</div>
+				</td>		
+	<td>
+					<div class="mm"><sup>6.94</div>
+					<div class="cen">Li</div>	
+					<div class="ab"><sub>3</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>9.0122</sup></div>
+					<div class="cen">Be</div>	
+					<div class="ab"><sub>4</sub></div>
+				</td>
+				<td class="bordure_vide" colspan=10>
+					<div></div>
+				</td>
+				
+			
+				<td>
+					<div class="mm"><sup>10.81</sup></div>
+					<div class="cen">B</div>	
+					<div class="ab"><sub>5</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>12.011</sup></div>
+					<div class="cen">C</div>	
+					<div class="ab"><sub>6</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>14.007</sup></div>
+					<div class="cen">N</div>	
+					<div class="ab"><sub>7</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>15.999</sup></div>
+					<div class="cen">O</div>	
+					<div class="ab"><sub>8</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>18.998</sup></div>
+					<div class="cen">F</div>	
+					<div class="ab"><sub>9</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>20.180</sup></div>
+					<div class="cen">Ne</div>	
+					<div class="ab"><sub>10</sub></div>
+				</td>
+			
+		</tr>
+
+		<!--ligne2-->
+<tr>
+	<td class="val_l">
+					<div>3</div>
+				</td>		
+	<td>
+					<div class="mm"><sup>39.098</sup></div>
+					<div class="cen">Na</div>	
+					<div class="ab"><sub>11</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>40.078</sup></div>
+					<div class="cen">Mg</div>	
+					<div class="ab"><sub>12</sub></div>
+				</td>
+				<td class="val_l">
+					<div>3</div>
+				</td>
+				<td class="val_l">
+					<div>4</div>
+				</td>
+				<td class="val_l">
+					<div>5</div>
+				</td>
+				<td class="val_l">
+					<div>6</div>
+				</td>
+				<td class="val_l">
+					<div>7</div>
+				</td>
+				<td class="val_l">
+					<div>8</div>
+				</td>
+				<td class="val_l">
+					<div>9</div>
+				</td>
+				<td class="val_l">
+					<div>10</div>
+				</td>
+				<td class="val_l">
+					<div>11</div>
+				</td>
+				<td class="val_l">
+					<div>12</div>
+				</td>
+			
+				<td>
+					<div class="mm"><sup>26.982</sup></div>
+					<div class="cen">Al</div>	
+					<div class="ab"><sub>13</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>28.085</sup></div>
+					<div class="cen">Si</div>	
+					<div class="ab"><sub>14</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>30.974</sup></div>
+					<div class="cen">P</div>	
+					<div class="ab"><sub>15</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>32.06</sup></div>
+					<div class="cen">S</div>	
+					<div class="ab"><sub>16</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>35.45</sup></div>
+					<div class="cen">Cl</div>	
+					<div class="ab"><sub>17</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>39.948</sup></div>
+					<div class="cen">Ar</div>	
+					<div class="ab"><sub>18</sub></div>
+				</td>
+			
+		</tr>
+		<tr>
+				<td class="val">
+					<div>4</div>
+				</td>
+				<td>
+					<div class="mm"><sup>39.098</sup></div>
+					<div class="cen">K</div>	
+					<div class="ab"><sub>19</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>40.078</sup></div>
+					<div class="cen">CA</div>	
+					<div class="ab"><sub>20</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>44.956</sup></div>
+					<div class="cen">Sc</div>	
+					<div class="ab"><sub>21</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>47.867</sup></div>
+					<div class="cen">Ti</div>	
+					<div class="ab"><sub>22</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>50.942</sup></div>
+					<div class="cen">V</div>	
+					<div class="ab"><sub>23</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>51.996</sup></div>
+					<div class="cen">Cr</div>	
+					<div class="ab"><sub>24</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>54.938</sup></div>
+					<div class="cen">Mn</div>	
+					<div class="ab"><sub>25</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>55.845</sup></div>
+					<div class="cen">Fe</div>	
+					<div class="ab"><sub>26</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>58.933</sup></div>
+					<div class="cen">Co</div>	
+					<div class="ab"><sub>27</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>58.693</sup></div>
+					<div class="cen">Ni</div>	
+					<div class="ab"><sub>28</sub></div>
+				</td>
+
+				<td>
+					<div class="mm"><sup>63.546</sup></div>
+					<div class="cen">Cu</div>	
+					<div class="ab"><sub>29</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>65.38</sup></div>
+					<div class="cen">Zn</div>	
+					<div class="ab"><sub>30</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>69.723</sup></div>
+					<div class="cen">Ga</div>	
+					<div class="ab"><sub>31</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>72.630</sup></div>
+					<div class="cen">Ge</div>	
+					<div class="ab"><sub>32</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>74.922</sup></div>
+					<div class="cen">As</div>	
+					<div class="ab"><sub>33</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>78.971</sup></div>
+					<div class="cen">Se</div>	
+					<div class="ab"><sub>34</sub></div>
+				</td>
+				<td class="liquide">
+					<div class="mm"><sup>79.904</sup></div>
+					<div class="cen">Br</div>	
+					<div class="ab"><sub>35</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>83.798</sup></div>
+					<div class="cen">Kr</div>	
+					<div class="ab"><sub>36</sub></div>
+				</td>
+		</tr>
+		<!--ligne5 -->
+		<tr>
+		
+			<td class="val">				
+				<div>5</div>
+				</td>
+				<td>
+					<div class="mm"><sup>85.468</sup></div>
+					<div class="cen">Rb</div>	
+					<div class="ab"><sub>37</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>87.62</sup></div>
+					<div class="cen">Sr</div>	
+					<div class="ab"><sub>38</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>88.906</sup></div>
+					<div class="cen">Y</div>	
+					<div class="ab"><sub>39</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>91.224</sup></div>
+					<div class="cen">Zr</div>	
+					<div class="ab"><sub>40</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>92.906</sup></div>
+					<div class="cen">Nb</div>	
+					<div class="ab"><sub>41</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>95.95</sup></div>
+					<div class="cen">Mo</div>	
+					<div class="ab"><sub>42</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[98]</sup></div>
+					<div class="cen">Tc</div>	
+					<div class="ab"><sub>43</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>101.07</sup></div>
+					<div class="cen">Ru</div>	
+					<div class="ab"><sub>44</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>102.91</sup></div>
+					<div class="cen">Rh</div>	
+					<div class="ab"><sub>45</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>106.42</sup></div>
+					<div class="cen">Pd</div>	
+					<div class="ab"><sub>46</sub></div>
+				</td>
+
+				<td>
+					<div class="mm"><sup>107.87</sup></div>
+					<div class="cen">Ag</div>	
+					<div class="ab"><sub>47</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>112.41</sup></div>
+					<div class="cen">Cd</div>	
+					<div class="ab"><sub>48</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>114.82</sup></div>
+					<div class="cen">In</div>	
+					<div class="ab"><sub>49</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>118.71</sup></div>
+					<div class="cen">Sn</div>	
+					<div class="ab"><sub>50</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>121.76</sup></div>
+					<div class="cen">Sb</div>	
+					<div class="ab"><sub>51</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>127.60</sup></div>
+					<div class="cen">Te</div>	
+					<div class="ab"><sub>52</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>126.90</sup></div>
+					<div class="cen">I</div>	
+					<div class="ab"><sub>53</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>131.29</sup></div>
+					<div class="cen">Xe</div>	
+					<div class="ab"><sub>54</sub></div>
+				</td>
+		</tr>
+		<!--ligne6-->
+		<tr>	
+			<td class="val">				
+				<div>6</div>
+				</td>
+				<td>
+					<div class="mm"><sup>132.91</div>
+					<div class="cen">Cs</div>	
+					<div class="ab"><sub>55</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>137.33</sup></div>
+					<div class="cen">Ba</div>	
+					<div class="ab"><sub>56</sub></div>
+				</td>
+					<td class="lanthanides">
+					<div id="lalu">La-Lu<br /></div>	
+					<div class="ab"><sub>57-71</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>178.49</sup></div>
+					<div class="cen">Hf</div>	
+					<div class="ab"><sub>72</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>180.95</sup></div>
+					<div class="cen">Ta</div>	
+					<div class="ab"><sub>73</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>183.84</sup></div>
+					<div class="cen">W</div>	
+					<div class="ab"><sub>74</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>186.21</sup></div>
+					<div class="cen">Re</div>	
+					<div class="ab"><sub>75</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>190.23</sup></div>
+					<div class="cen">Os</div>	
+					<div class="ab"><sub>76</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>192.22</sup></div>
+					<div class="cen">Ir</div>	
+					<div class="ab"><sub>77</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>195.08</sup></div>
+					<div class="cen">Pt</div>	
+					<div class="ab"><sub>78</sub></div>
+				</td>
+
+				<td>
+					<div class="mm"><sup>196.97</sup></div>
+					<div class="cen">Au</div>	
+					<div class="ab"><sub>79</sub></div>
+				</td>
+				<td class="liquide">
+					<div class="mm"><sup>200.59</sup></div>
+					<div class="cen">Hg</div>	
+					<div class="ab"><sub>80</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>204.38</sup></div>
+					<div class="cen">Tl</div>	
+					<div class="ab"><sub>81</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>207.2</sup></div>
+					<div class="cen">Pb</div>	
+					<div class="ab"><sub>82</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>208.98</sup></div>
+					<div class="cen">Bi</div>	
+					<div class="ab"><sub>83</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[209]</sup></div>
+					<div class="cen">Po</div>	
+					<div class="ab"><sub>84</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[210]</sup></div>
+					<div class="cen">At</div>	
+					<div class="ab"><sub>85</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>[222]</sup></div>
+					<div class="cen">Rn</div>	
+					<div class="ab"><sub>86</sub></div>
+				</td>
+		</tr>
+		<!--ligne7-->
+		<tr>	
+			<td class="val">				
+				<div>7</div>
+				</td>
+				<td>
+					<div class="mm"><sup>[223]</div>
+					<div class="cen">Fr</div>	
+					<div class="ab"><sub>87</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[226]</sup></div>
+					<div class="cen">Ra</div>	
+					<div class="ab"><sub>88</sub></div>
+				</td>
+					<td class="actinides">
+					<div id="lalu">Ac-Lr<br /></div>	
+					<div class="ab"><sub>89-103</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[267]</sup></div>
+					<div class="cen">Rf</div>	
+					<div class="ab"><sub>104</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[270]</sup></div>
+					<div class="cen">Db</div>	
+					<div class="ab"><sub>105</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[271]</sup></div>
+					<div class="cen">Sg</div>	
+					<div class="ab"><sub>106</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[270]</sup></div>
+					<div class="cen">Bh</div>	
+					<div class="ab"><sub>107</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[277]</sup></div>
+					<div class="cen">Hs</div>	
+					<div class="ab"><sub>108</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[276]</sup></div>
+					<div class="cen">Mt</div>	
+					<div class="ab"><sub>109</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[281]</sup></div>
+					<div class="cen">Ds</div>	
+					<div class="ab"><sub>110</sub></div>
+				</td>
+
+				<td>
+					<div class="mm"><sup>[282]</sup></div>
+					<div class="cen">Rg</div>	
+					<div class="ab"><sub>111</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[285]</sup></div>
+					<div class="cen">Cn</div>	
+					<div class="ab"><sub>112</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[285]</sup></div>
+					<div class="cen">Nh</div>	
+					<div class="ab"><sub>113</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[289]</sup></div>
+					<div class="cen">Fl</div>	
+					<div class="ab"><sub>114</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[289]</sup></div>
+					<div class="cen">Mc</div>	
+					<div class="ab"><sub>115</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[293]</sup></div>
+					<div class="cen">Lv</div>	
+					<div class="ab"><sub>116</sub></div>
+				</td>
+				<td>
+					<div class="mm"><sup>[294]</sup></div>
+					<div class="cen">Ts</div>	
+					<div class="ab"><sub>117</sub></div>
+				</td>
+				<td class="gaz">
+					<div class="mm"><sup>[294]</sup></div>
+					<div class="cen">Og</div>	
+					<div class="ab"><sub>118</sub></div>
+				</td>
+		</tr>
+		</tr>
+		<tr class="bordure_vide" colspan=19>
+		</tr>
+		<!--Lanthanides-->
+		<tr>	
+			<td class="val" colspan="4">				
+				<div class="texte">Lanthanides</div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>138.91</div>
+					<div class="cen">La</div>	
+					<div class="ab"><sub>57</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>140.12</sup></div>
+					<div class="cen">Ce</div>	
+					<div class="ab"><sub>58</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>140.91</sup></div>
+					<div class="cen">Pr<br /></div>	
+					<div class="ab"><sub>59</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>144.24</sup></div>
+					<div class="cen">Nd</div>	
+					<div class="ab"><sub>60</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>[145]</sup></div>
+					<div class="cen">Pm</div>	
+					<div class="ab"><sub>61</sub></div>
+				</td>
+			<td class="lanthanides">
+					<div class="mm"><sup>150.36</sup></div>
+					<div class="cen">Sm</div>	
+					<div class="ab"><sub>62</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>150.36</sup></div>
+					<div class="cen">Eu</div>	
+					<div class="ab"><sub>63</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>157.25</sup></div>
+					<div class="cen">Gd</div>	
+					<div class="ab"><sub>64</sub></div>
+				</td>
+					<td class="lanthanides">
+					<div class="mm"><sup>158.93</sup></div>
+					<div class="cen">Tb</div>	
+					<div class="ab"><sub>65</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>162.50</sup></div>
+					<div class="cen">Dy</div>	
+					<div class="ab"><sub>66</sub></div>
+				</td>
+
+					<td class="lanthanides">
+					<div class="mm"><sup>164.93</sup></div>
+					<div class="cen">Ho</div>	
+					<div class="ab"><sub>67</sub></div>
+				</td>
+					<td class="lanthanides">
+					<div class="mm"><sup>167.26</sup></div>
+					<div class="cen">Er</div>	
+					<div class="ab"><sub>68</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>168.93</sup></div>
+					<div class="cen">Tm</div>	
+					<div class="ab"><sub>69</sub></div>
+				</td>
+					<td class="lanthanides">
+					<div class="mm"><sup>173.05</sup></div>
+					<div class="cen">Yb</div>	
+					<div class="ab"><sub>70</sub></div>
+				</td>
+				<td class="lanthanides">
+					<div class="mm"><sup>174.97</sup></div>
+					<div class="cen">Lu</div>	
+					<div class="ab"><sub>71</sub></div>
+				</td>	
+		</tr>
+		<tr class="bordure_vide" colspan=19>
+		</tr>
+		<!--Actinides-->
+		<tr>	
+			<td class="val" colspan="4">				
+				<div class="texte">Actinides</div>
+				</td>
+				<td class="actinides">
+					<div class="mm"><sup>[227]</div>
+					<div class="cen">Ac</div>	
+					<div class="ab"><sub>89</sub></div>
+				</td>
+				<td class="actinides">
+					<div class="mm"><sup>232.04</sup></div>
+					<div class="cen">Th</div>	
+					<div class="ab"><sub>90</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>231.04</sup></div>
+					<div class="cen">Pa<br /></div>	
+					<div class="ab"><sub>91</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>238.03</sup></div>
+					<div class="cen">U</div>	
+					<div class="ab"><sub>92</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[237]</sup></div>
+					<div class="cen">Np</div>	
+					<div class="ab"><sub>93</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[244]</sup></div>
+					<div class="cen">Pu</div>	
+					<div class="ab"><sub>94</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[243]</sup></div>
+					<div class="cen">Am</div>	
+					<div class="ab"><sub>95</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[247]</sup></div>
+					<div class="cen">Cm</div>	
+					<div class="ab"><sub>96</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[247]</sup></div>
+					<div class="cen">Bk</div>	
+					<div class="ab"><sub>97</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[251]</sup></div>
+					<div class="cen">Cf</div>	
+					<div class="ab"><sub>98</sub></div>
+				</td>
+
+					<td class="actinides">
+					<div class="mm"><sup>[252]</sup></div>
+					<div class="cen">Es</div>	
+					<div class="ab"><sub>99</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[257]</sup></div>
+					<div class="cen">Fm</div>	
+					<div class="ab"><sub>100</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[258]</sup></div>
+					<div class="cen">Md</div>	
+					<div class="ab"><sub>101</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[259]</sup></div>
+					<div class="cen">No</div>	
+					<div class="ab"><sub>102</sub></div>
+				</td>
+					<td class="actinides">
+					<div class="mm"><sup>[262]</sup></div>
+					<div class="cen">Lr</div>	
+					<div class="ab"><sub>103</sub></div>
+				</td>	
+		</tr>
+	</tr>
+		<tr class="bordure_vide" colspan=19>
+		</tr>
+	<!--definition etats-->
+		<tr>	
+			<td colspan="4">				
+				<div class="texte">Solide</div>
+			</td>
+		<td class="liquide" colspan="3">				
+				<div class="texte">Liquide</div>
+			</td>
+	<td class="gaz" colspan="3">				
+				<div class="texte">Gaz</div>
+			</td>
+	<td class="eau" colspan="9">				
+				<div class="texte">Point triple de l'eau (273.16 K, 0.01 °C)</div>
+			</td>
+
+	</table>
+
+</BODY>
+

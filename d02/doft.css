@@ -1,0 +1,130 @@
+/*FOND A SUPPRIMER*/
+/*.my-container {
+position: relative;
+overflow: hidden;
+}
+.my-container h1 {
+padding: 10000px;
+position: relative;
+z-index: 2;
+} 
+.my-container img {
+position: absolute;
+left: 0;
+top: 0;
+width: 100%;
+height: auto;
+opacity: 1;
+}
+ */
+
+body {
+	background-color:rgb(80,80,80);
+	position: fixed;
+}
+/*---------------------------CLUSTER--------------------------------*/
+#global {
+
+	position: fixed ; /* postulat de départ */
+	top: 320px; left: 350px; /* à 50%/50% du parent référent */	
+	box-shadow: 11px 11px 11px black
+}
+
+#cluster {	
+	text-align:center;
+	border-style: solid;
+	border-width: 10px;
+	border-radius: 7px;
+	color: rgb(144,144,144);
+}
+
+/*---------------------------DAY OF 42--------------------------------*/
+section {
+	position: fixed; /* postulat de départ */
+	top: 157px; left: 145px; /* à 50%/50% du parent référent */
+	/*transform: translate(-50%, -50%)*/
+	display: block;
+	width: 1455px;
+	height: 140px;
+	background-color: rgb(144,144,144);
+	border-radius: 10px;
+	box-shadow: 11px 11px 11px black
+}
+
+#doft {
+	text-align:bottom;
+	border-style:none;
+	background-size: auto 50%;
+	background-repeat: no-repeat;
+	width: 400px;
+	border-radius: 10px;
+}
+
+/*------------------------RECTANGLE GAUCHE----------------------------*/.rectangleg {
+position: fixed;
+top: 320px; left: 180px;	
+width:140px;
+height:430px;
+background-color: rgb(144,144,144);
+border-radius: 10px;
+box-shadow: 11px 11px 11px black
+}
+
+/*------------------------RECTANGLE DROITE----------------------------*/.rectangled {
+position: fixed;
+top: 320px; left: 1425px;	
+width:140px;
+height:430px;
+background-color: rgb(144,144,144);
+border-radius: 10px;
+box-shadow: 11px 11px 11px black
+}
+/*------------------------RECTANGLE VERT----------------------------*/
+.rectanglev {
+	border-width: 0;
+	color: #000;
+	font: normal 18px/17px Tahoma, Verdana, Arial, Helvetica, sans-serif;
+
+	letter-spacing: 1px;
+	vertical-align: middle;
+	position: fixed;
+	top:830px; left: 110px;	
+	width:520px;
+	height:150px;
+	background-color: rgb(140,253,142);
+	border-radius: 10px;
+	box-shadow: 11px 11px 11px black
+}
+
+/*-------------------------TEXTE------------------------------------*/
+#enter {
+	font: normal 35px/25px Georgia, URW Palladio L, serif;
+	letter-spacing: 0.5px;
+}
+#textl {
+	font: normal 17px/25px Verdana, serif;
+	letter-spacing: 0.5px;
+	font-style: normal;
+	padding: 10px;
+}
+
+#text {
+	font: italic 16px/25px Verdana, serif;
+	letter-spacing: 0.5px;
+	font-style: italic;
+}
+
+#bord {
+	border: 3px inset;
+}
+
+#submit {
+	background-color: rgb(243,241,242);
+	border: 1px solid white;
+	font-family: tahoma;
+	font-size: 13px;
+	font-weight: normal;
+	color: black;
+	border: 1px solid grey;
+	letter-spacing: 1px;
+}

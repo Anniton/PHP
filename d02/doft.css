@@ -11,6 +11,7 @@ body {
 }
 
 #cluster {	
+	
 	text-align:center;
 	border-style: solid;
 	border-width: 10px;
@@ -233,4 +234,12 @@ section {
 
 #red {
 	text-shadow: 5px 5px 5px red;
+}
+/*----------------------------TEXTE---------------------------------*/
+.rect {
+	width:140px;
+	height:140px;
+	background-color: rgb(144,144,144);
+	border-radius: 10px;
+	box-shadow: 11px 11px 11px black
 }

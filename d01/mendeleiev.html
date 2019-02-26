@@ -4,7 +4,6 @@
 	<STYLE>
 table
 {
-
 	width:150px;
 }
 	td /* Toutes les cellules des tableaux... */
@@ -59,12 +58,13 @@ table
 		box-shadow:none;
 	}
 	.val_l
-	{	
+	{		
 		background:none;	
 		box-shadow:none;
 		color:red;
 		font-weight:bold;
-		font-size: 0.8em
+		font-size: 0.8em;
+		text-align:center;
 	}
 
 	.bordure_vide
@@ -80,16 +80,18 @@ table
 		font-weight:normal;
 		text-align:right;
 	}
-	.lanthanides {
+	.lanthanides
+	{
 		box-shadow: 1px 1px 0.5px grey;
 		background: #ecffb3;
 		width: 150px; 
-		}
-	.actinides {
+	}
+	.actinides
+	{
 		box-shadow: 1px 1px 0.5px grey;
 		background: #e6e6ff;
 		width: 150px; 
-		}
+	}
 	#lalu
 	{
 		text-align :center;
@@ -99,15 +101,18 @@ table
 	</STYLE>
 </HEAD>
 <BODY>
-	<p></p>
-	
+	<p>	<img src="temp.gif" /></p>
+	<p>
 	<table>
 		<tr>
 		<td class="val_l" colspan=2>
-					<div>1</div>
+					<div class="cen">1</div>
 				</td>
-	<td class="val_l" colspan=16>
-					<div>2</div>
+	<td class="val_l">
+		<div>2</div>
+				</td>
+	<td class="val_l" colspan=15>
+					<div></div>
 				</td>
 
 			<td class="val_l">
@@ -280,7 +285,7 @@ table
 			
 		</tr>
 		<tr>
-				<td class="val">
+				<td class="val_l">
 					<div>4</div>
 				</td>
 				<td>
@@ -378,7 +383,7 @@ table
 		<!--ligne5 -->
 		<tr>
 		
-			<td class="val">				
+			<td class="val_l">				
 				<div>5</div>
 				</td>
 				<td>
@@ -475,7 +480,7 @@ table
 		</tr>
 		<!--ligne6-->
 		<tr>	
-			<td class="val">				
+			<td class="val_l">				
 				<div>6</div>
 				</td>
 				<td>
@@ -571,7 +576,7 @@ table
 		</tr>
 		<!--ligne7-->
 		<tr>	
-			<td class="val">				
+			<td class="val_l">				
 				<div>7</div>
 				</td>
 				<td>
@@ -853,6 +858,6 @@ table
 			</td>
 
 	</table>
-
+	</p>
 </BODY>
 

@@ -1,37 +1,31 @@
 #!/usr/bin/php
 <?php
-/*
-$filename = $argv[1];
-$handle = fopen($filename, "r");
-$contents  = fread($handle, filesize($filename));
+if ($argc < 2 || !file_exists($argv[1]))
+	exit ;
 
-fwrite($handle, filesize($filename)); 
-fclose($handle);
- */
-
-	if ($argc < 2 || !file_exists($argv[1]))
-		exit();
-	$read = fopen($argv[1], 'r');
-	$page = "";
-	while ($read && !feof($read))
-		$page .= fgets($read);
-	
-	
-	/*
-		$page = preg_replace_callback("/(<a )(.*?)(>)(.*)(<\/a>)/si", 
-		
-		function($matches) 
+$fp = fopen($argv[1], "r") or die("Impossible de lire la ligne de commande");
+while (!feof($fp))
+{
+	$page = fgets($fp);
+	$page = preg_replace_callback("/(<a )(.*?)(>)(.*)(<\/a>)/s", function($matches) 
+	{
+		$matches[0] = preg_replace_callback("/( title=\")(.*?)(\")/m", function($matches)
 		{
-			$matches[0] = preg_replace_callback("/( title=\")(.*?)(\")/mi", 
-				function($matches) {
-			return ($matches[1]."".strtoupper($matches[2])."".$matches[3]);
+			return ($matches[1].strtoupper($matches[2]).$matches[3]); 
 		}, $matches[0]);
-		$matches[0] = preg_replace_callback("/(>)(.*?)(<)/si", function($matches) {
-			return ($matches[1]."".strtoupper($matches[2])."".$matches[3]);
-		}, $matches[0]);
-		return ($matches[0]);
-	}, $page);
-	echo $page;
 
-	 */
+
+
+		$matches[0] = preg_replace_callback("/(>)(.*?)(<)/m", function($matches)
+		{
+			return ($matches[1].strtoupper($matches[2]).$matches[3]);
+		}, $matches[0]);
+
+
+		return ($matches[0]);
+	},
+		$page);
+	echo $page;
+}
+fclose($fp);
 ?>

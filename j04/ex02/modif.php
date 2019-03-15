@@ -34,7 +34,7 @@ if ($_POST['newpw'] && $_POST['login'] && $_POST['oldpw'] && $_POST['submit'] &&
 }
 else
 {
-	"ERROR\n";
+	echo "ERROR\n";
 	exit();
 }
 ?>

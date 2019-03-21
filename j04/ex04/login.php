@@ -18,7 +18,6 @@ if (auth($_POST['login'], $_POST['passwd']) == TRUE)
 			</form>
 		</body>
 	</html>
-
 <?php
 }
 else
@@ -28,5 +27,3 @@ else
 	echo "ERROR\n";
 }
 ?>
-
-

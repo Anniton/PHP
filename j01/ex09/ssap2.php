@@ -2,19 +2,61 @@
 <?php
 function ft_split($string)
 {
-	$my_tab=explode(" ", $string);
-	$word = array_values(array_filter($my_tab));	
-	
-	sort($word);	
-	return($word);
+	$word=explode(" ", $string);
+	$my_tab = array_values(array_filter($word));	
+
+	sort($my_tab);	
+	return($my_tab);
 }
 
 if ($argc != 1)
 {
-	foreach ($tab as $nb)
-		echo $nb;
-		$nb = is_numeric($argv[)
-	sort($nb, SORT_NUMERIC);
-	echo $sort;
+	$i = 1;
+	while ($i < $argc)
+		$string .= " ".$argv[$i++]." "; 
+	$strtrim = trim($string);
+	$my_tab = ft_split($strtrim);
+
+	foreach ($my_tab as $alpha)
+	{
+		if (ctype_alpha($alpha))
+		{
+			$alphabetic[] = $alpha;
+			natcasesort($alphabetic);
+		}
+	}
+	if ($alphabetic)
+		foreach ($alphabetic as $v)
+			echo $v.PHP_EOL;
+	else
+		echo "";
+
+	foreach ($my_tab as $nb)
+	{
+		if (is_numeric($nb))
+		{
+			$numeric[] = $nb;
+			sort($numeric, SORT_STRING);
+		}
+	}
+	if ($numeric)
+		foreach ($numeric as $v)
+			echo $v.PHP_EOL;
+	else
+		echo "";
+
+	foreach ($my_tab as $oth)
+	{
+		if ((ctype_alpha($oth) == false) && (is_numeric($oth) == false))
+		{
+			$other[] = $oth;
+			natcasesort($other);
+		}
+	}
+	if ($other)
+		foreach ($other as $v)
+			echo $v.PHP_EOL;
+	else
+		echo "";
 }
 ?>

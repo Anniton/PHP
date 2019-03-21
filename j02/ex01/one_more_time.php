@@ -4,22 +4,6 @@ if ($argc < 2)
 	exit ;
 
 date_default_timezone_set("Europe/paris");
-/*
-$mois = array (
-	01 => "janvier",
-	02 => "février",
-	03 => "mars",
-	04 => "avril",
-	05 => "mai",
-	06 => "juin",
-	07 => "juillet",
-	08 => "août",
-	09 => "septembre",
-	10 => "octobre",
-	11 => "novembre",
-	12 => "décembre",
-);
- */
 $english = array (
 	"jan" => "janvier",
 	"feb" => "février",

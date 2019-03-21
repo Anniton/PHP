@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>Balloon</title>
+		<style>
+.balloon {
+	height:200px;
+	width:200px;
+	background: red;
+	border-radius:50%;
+}
+		</style>
+	</head>
+
+
+
+	<body>
+		<div  class="balloon" onmouseleave="mouseOutBalloon()" ></div>
+		<script>
+var tabColor = {0: 'red', 1: 'green', 2: 'blue'};
+var globalSize = 200;
+var colorIdx = 0;
+var balloon = document.getElementsByClassName('balloon')[0];
+/*https://stackoverflow.com/questions/32027935/addeventlistener-is-not-a-function-why-does-this-error-occur/47941240*/
+function mouseOutBalloon() {
+	globalSize -= 5;
+	if (globalSize < 200)
+		globalSize = 200;
+	colorIdx--;
+	if (colorIdx < 0)
+		colorIdx = 2;
+	balloon.style.height = globalSize + 'px';
+	balloon.style.width = globalSize + 'px';
+	balloon.style.background = tabColor[colorIdx];
+}
+balloon.addEventListener('click', function (clickBalloon){
+	globalSize += 10;
+	if (globalSize > 420)
+		globalSize = 0;
+	colorIdx++;
+	if (colorIdx > 2)
+		colorIdx = 0;
+	balloon.style.height =  globalSize + 'px';
+	balloon.style.width =  globalSize + 'px';
+	balloon.style.background = tabColor[colorIdx];
+});
+		</script>
+	</body>
+</html>
+

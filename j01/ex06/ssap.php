@@ -1,5 +1,6 @@
 #!/usr/bin/php
 <?php
+
 function ft_split($string)
 {
 	$my_tab=explode(" ", $string);	
@@ -17,5 +18,5 @@ if ($argc > 1)
 	$array = ft_split($strtrim);
 	foreach ($array as $elem)
 		echo "$elem\n";
-}
-?>
+}?>
+

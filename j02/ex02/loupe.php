@@ -13,15 +13,10 @@ while (!feof($fp))
 		{
 			return ($matches[1].strtoupper($matches[2]).$matches[3]); 
 		}, $matches[0]);
-
-
-
 		$matches[0] = preg_replace_callback("/(>)(.*?)(<)/m", function($matches)
 		{
 			return ($matches[1].strtoupper($matches[2]).$matches[3]);
 		}, $matches[0]);
-
-
 		return ($matches[0]);
 	},
 		$page);

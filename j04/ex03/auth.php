@@ -12,11 +12,11 @@ function auth($login, $passwd)
 		foreach ($tab as $data)
 		{
 			if ($data['login'] === $login && $data['passwd'] === $pass)
-				return true;
+				return TRUE;
 		}
 	}
 	else
-		return false;
+		return FALSE;
 }
 
 ?>

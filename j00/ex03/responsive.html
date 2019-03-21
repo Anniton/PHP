@@ -1,117 +1,21 @@
 <!DOCTYPE html>
-
 <HEAD>
-	<STYLE>
-table
-{
-	width:150px;
-}
-	td /* Toutes les cellules des tableaux... */
-	{	
-		
-		background: #ffcccc;
-		box-shadow: 1px 1px 0.5px grey;
-		width: 150px;
-	}
-	th {	
-		color:white;
-	}
-	.liquide
-	{	
-		box-shadow: 1px 1px 0.5px grey;
-		background: #b3ecff;
-		width: 150px; 
-	}
-	.gaz {
-		box-shadow: 1px 1px 0.5px grey;
-		background: #ffff99;
-		width: 150px; 
-		}
-	.eau
-	{
-		box-shadow: 1px 1px 0.5px grey;
-		background: #e0e0eb;
-		width: 150px; 
-	}
-	.ab {
-		font: 0.8rem 'Fira Sans', sans-serif;
-		text-align:left;
-		bottom = 0;
-		}
-
-	.cen
-	{
-		text-align :center;
-		font-weight:bold;
-	}
-	.mm 
-	{
-		font: 0.8rem 'Fira Sans', sans-serif;
-		text-align:right;
-		top = 0;
-	}
-	.val
-	{
-		color:red;
-		font-weight:bold;
-		background:none;
-		box-shadow:none;
-	}
-	.val_l
-	{		
-		background:none;	
-		box-shadow:none;
-		color:red;
-		font-weight:bold;
-		font-size: 0.8em;
-		text-align:center;
-	}
-
-	.bordure_vide
-	{
-		height:10px;
-		background:none;
-		box-shadow:none;
-	}
-	.texte
-	{
-		color:black;
-		font-size:0.9em;
-		font-weight:normal;
-		text-align:right;
-	}
-	.lanthanides
-	{
-		box-shadow: 1px 1px 0.5px grey;
-		background: #ecffb3;
-		width: 150px; 
-	}
-	.actinides
-	{
-		box-shadow: 1px 1px 0.5px grey;
-		background: #e6e6ff;
-		width: 150px; 
-	}
-	#lalu
-	{
-		text-align :center;
-		font-weight:bold;
-		font-size: 0.7em;
-	}
-	</STYLE>
+	<meta charset="utf-8">
+	<title>Mendeleiev</title>
+	<link href="responsive.css" rel="stylesheet" type="text/css" />
 </HEAD>
 <BODY>
 	<p>	<img src="temp.gif" /></p>
 	<p>
 	<table>
 		<tr>
-		<td class="val_l" colspan=2>
+		<td class="val_l">
 					<div class="cen">1</div>
 				</td>
 	<td class="val_l">
 		<div>2</div>
 				</td>
-	<td class="val_l" colspan=15>
+	<td class="val_l">
 					<div></div>
 				</td>
 
@@ -163,6 +67,7 @@ table
 					<div class="cen">Li</div>	
 					<div class="ab"><sub>3</sub></div>
 				</td>
+				
 				<td>
 					<div class="mm"><sup>9.0122</sup></div>
 					<div class="cen">Be</div>	
@@ -671,11 +576,11 @@ table
 				</td>
 		</tr>
 		</tr>
-		<tr class="bordure_vide" colspan=19>
+		<tr class="bordure_vide">
 		</tr>
 		<!--Lanthanides-->
 		<tr>	
-			<td class="val" colspan="4">				
+			<td class="val">				
 				<div class="texte">Lanthanides</div>
 				</td>
 				<td class="lanthanides">
@@ -755,11 +660,11 @@ table
 					<div class="ab"><sub>71</sub></div>
 				</td>	
 		</tr>
-		<tr class="bordure_vide" colspan=19>
+		<tr class="bordure_vide">
 		</tr>
 		<!--Actinides-->
 		<tr>	
-			<td class="val" colspan="4">				
+			<td class="val">				
 				<div class="texte">Actinides</div>
 				</td>
 				<td class="actinides">
@@ -840,20 +745,20 @@ table
 				</td>	
 		</tr>
 	</tr>
-		<tr class="bordure_vide" colspan=19>
+		<tr class="bordure_vide">
 		</tr>
 	<!--definition etats-->
 		<tr>	
-			<td colspan="4">				
+			<td>				
 				<div class="texte">Solide</div>
 			</td>
-		<td class="liquide" colspan="3">				
+		<td class="liquide">				
 				<div class="texte">Liquide</div>
 			</td>
-	<td class="gaz" colspan="3">				
+	<td class="gaz">				
 				<div class="texte">Gaz</div>
 			</td>
-	<td class="eau" colspan="9">				
+	<td class="eau">				
 				<div class="texte">Point triple de l'eau (273.16 K, 0.01 °C)</div>
 			</td>
 

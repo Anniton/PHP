@@ -1,124 +1,134 @@
-table
-{
-  
-    table-layout: auto;	
-    width: 80%;
+img { 
+	height:50%;
+}
+table {
+	table-layout: fixed;
+	width: 80%;
 	height: 80%;
 }
-	td
-	{	
-		background: #ffcccc;
-		box-shadow: 1px 1px 0.5px grey;
-        width: 80%;
-	    height: 80%;
-        
-	}
-	th {	
-        color:white;
-        width: 80%;
-	    height: 80%; 
-   
+tr {
+	height: 1vw;
+	width: 4vw;
+}
+th {	
+	font: 1vw,'Fira Sans', sans-serif;
+	color:white;
+}
+td {
+	box-shadow: 1px 1px 0.5px grey;
+	width: 5%;
+	height: 0;
+	font-size: 1vw;
+	font: 1vw,'Fira Sans', sans-serif;
+	background: #ffcccc;
+
+}
+
+p {
+	font-size: 1vw;
+}
+.wrapper {
+	display: flex;
+}
+.white {
+	border: none;
+	box-shadow: none;
+	text-align: center;
+	color: white;
+	background-color: white;
+}
+.val
+{
+	font: 1vw,'Fira Sans', sans-serif;
+	color:red;
+	font-weight:bold;
+	background:none;
+	box-shadow:none;
+}
+.val_l
+	{		
+		font: 1vw,'Fira Sans', sans-serif;
+		background:none;	
+		box-shadow:none;
+		color:red;
+		font-weight:bold;
+        text-align:center;
 	}
 	.liquide
 	{	
+		font: 1vw,'Fira Sans', sans-serif;
 		box-shadow: 1px 1px 0.5px grey;
 		background: #b3ecff;
-        width: 80%;
-	    height: 80%;
+
 	}
 	.gaz {
+		font: 1vw,'Fira Sans', sans-serif;
 		box-shadow: 1px 1px 0.5px grey;
 		background: #ffff99;
-        width: 80%;
-	    height: 80%;
+
 		}
 	.eau
 	{
+		font: 1vw,'Fira Sans', sans-serif;
 		box-shadow: 1px 1px 0.5px grey;
 		background: #e0e0eb;
-        width: 80%;
-	    height: 80%; 
+
 	}
 	.ab {
 		font: 1vw,'Fira Sans', sans-serif;
 		text-align:left;
         bottom = 0;
-        width: 80%;
-	    height: 80%; 
 		}
 
 	.cen
 	{
+		font: 1vw,'Fira Sans', sans-serif;
 		text-align :center;
         font-weight:bold;
-        width: 80%;
-	    height: 80%; 
+
 	}
 	.mm 
 	{
-		font: 01vw, 'Fira Sans', sans-serif;
+		font: 1vw, 'Fira Sans', sans-serif;
 		text-align:right;
         top = 0;
-        width: 80%;
-	    height: 80%; 
-	}
-	.val
-	{
-		color:red;
-		font-weight:bold;
-		background:none;
-        box-shadow:none;
-        width: 80%;
-	    height: 80%; 
-	}
-	.val_l
-	{		
-		background:none;	
-		box-shadow:none;
-		color:red;
-		font-weight:bold;
-		font-size: 1vw;
-        text-align:center;
-        width: 80%;
-	    height: 80%; 
-	}
 
-	.bordure_vide
-	{
-		height:10px;
-		background:none;
-        box-shadow:none;
-        width: 80%;
-	    height: 80%; 
 	}
 	.texte
 	{
+		font: 1vw,'Fira Sans', sans-serif;
 		color:black;
 		font-size:1vw;
 		font-weight:normal;
         text-align:right;
-        width: 80%;
-	    height: 80%; 
 	}
 	.lanthanides
 	{
+		font: 1vw,'Fira Sans', sans-serif;
 		box-shadow: 1px 1px 0.5px grey;
 		background: #ecffb3;
-        width: 80%;
-	    height: 80%; 
+
 	}
 	.actinides
 	{
+		font: 1vw,'Fira Sans', sans-serif;
 		box-shadow: 1px 1px 0.5px grey;
 		background: #e6e6ff;
-        width: 80%;
-	    height: 80%; 
+
 	}
 	#lalu
 	{
+		font: 1vw,'Fira Sans', sans-serif;
 		text-align :center;
 		font-weight:bold;
         font-size: 1vw;
-        width: 80%;
-	    height: 80%; 
+
+	}
+	.texte
+	{
+		font: 1vw,'Fira Sans', sans-serif;
+		color:black;
+		font-size:1vw;
+		font-weight:bold;
+        text-align:right;
 	}

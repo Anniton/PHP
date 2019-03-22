@@ -1,12 +1,19 @@
 #!/usr/bin/php
 <?php
+
+function myFilter($var){
+	return ($var !== NULL && $var !== FALSE && $var !== '');
+}
 function ft_split($string)
 {
-	$word=explode(" ", $string);
-	$my_tab = array_values(array_filter($word));	
-
-	sort($my_tab);	
-	return($my_tab);
+	$my_tab=explode(" ", $string);
+	if (isset($my_tab) === true)
+	{
+		$res = array_filter($my_tab, 'myFilter');
+		$word = array_values(($res));
+	}
+	sort($word);
+	return($word);
 }
 
 if ($argc != 1)

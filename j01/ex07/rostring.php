@@ -5,6 +5,9 @@ function ft_split_no($str)
 	$tab = explode(" ", $str);
 	return($tab);
 }
+if ($argv[1] === "")
+	exit();
+else{
 	$word = trim($argv[1]);
 	$tab = str_ireplace("  ", " ", $word);	
 	while (strstr($tab, "  "))
@@ -18,30 +21,5 @@ function ft_split_no($str)
 	echo $first;
 if ($argc > 1)
 	echo PHP_EOL;
- /*
-function ft_split_no($s1)
-{
-	$tab = explode(" ", $s1);
-	return($tab);
 }
-
-
-$eleme = trim($argv[1]);
-$tab = str_ireplace("  ", " ", $eleme);
-
-
-while (strstr($tab, "  "))
-{
-	$tab = str_ireplace("  ", " ", $tab);
-}
-$my_tab = explode(" ", $tab);
-$first = array_shift($my_tab);
-foreach($my_tab as $el)
-{
-	echo $el;
-	echo " ";
-}
-echo $first;
-if ($argc > 1)
-	echo "\n";*/
 ?>

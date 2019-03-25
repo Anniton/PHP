@@ -1,6 +1,5 @@
 #!/usr/bin/php
 <?php
-
 function myFilter($var){
 	return ($var !== NULL && $var !== FALSE && $var !== '');
 }
@@ -25,8 +24,12 @@ if ($argc > 1)
 			$string .= " ".$argv[$i++]." "; /*concatenation des arguments*/
 		$strtrim = trim($string);
 		$array = ft_split($strtrim);
-		foreach ($array as $elem)
-		{	echo $elem.PHP_EOL;
+		$size = sizeof($array);
+		foreach ($array as $key => $elem)
+		{	
+			echo $elem;
+			if ($key < $size - 1)
+				echo PHP_EOL;
 		}
 	}
 }

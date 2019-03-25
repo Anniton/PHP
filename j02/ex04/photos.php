@@ -1,67 +1,54 @@
 #!/usr/bin/php
 <?php
-
+/***************recuperer la page HTML****************/
+function getHtml($url){
+$ch = curl_init($url);
+curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+$html = curl_exec($curl);
+curl_close($curl);
+return ($html);
+}
+/*************Isoler les images du site par l'intitule***************/
+function isolateImg($link,$url) {
+preg_match("/<img[^>]+src=([^\s>]+)/i", $link, $matches);
+foreach ($matches as $elem => $value) {
+	$reg_exUrl = "/(http|https|ftp|ftps)\:\/\/[a-zA-Z0-9\-\.]+\.[a-zA-Z]{2,3}(\/\S*)?/";
+	$v = preg_replace("/<img src=/", '', $link);
+	$v = stripslashes(substr($v, 1, -1));
+	if (preg_match($reg_exUrl, $link))
+		return $v;
+	else
+		return $url . $v; }
+}
+/***************Creer le dossier**********************/
+function createR($filename) {
+	$filename = preg_replace("/^.*?:\/\//","", $filename);
+	if (file_exists($filename) && is_dir($filename))
+		return($filename);
+	mkdir($filename);
+	return($filename);
+}
+/*****************Recuperer les images****************/
+function dwnldImg($img, $filename) {
+	$ch = curl_init($img);///On initialise cURL
+	curl_setopt($ch, CURLOPT_URL, 0);///On lui transmet la variable qui contient l'URL
+	curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);///On lui demdande de nous retourner la page
+	curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);///On envoie un user-agent pour ne pas être considéré comme un bot malicieux
+	$res = curl_exec($ch);///On exécute notre requête et met le résultat dans une variable
+	curl_close($ch);///On ferme la connexion cURL
+	$fp = fopen($filename, 'w');
+	fwrite($fp, $fp=$filename);
+	fclose($fp);
+}
+/*************************DO***************************/
 if ($argc < 2 || !file_exists($argv[1]))	
-	exit ;
-
-
-//La page qu'on veut utiliser
-$site = 'http://www.42.fr/';
-////On initialise cURL
-$ch = curl_init();
-////On lui transmet la variable qui contient l'URL
-curl_setopt($ch, CURLOPT_URL, $site);
-////On lui demdande de nous retourner la page
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-////On envoie un user-agent pour ne pas être considéré comme un bot malicieux
-curl_setopt($ch, CURLOPT_USERAGENT, 'Le blog de Samy Dindane (www.dinduks.com');
-////On exécute notre requête et met le résultat dans une variable
-$resultat = curl_exec($ch);
-////On ferme la connexion cURL
-curl_close($ch);
-
-
-//On crée un nouveau document DOMDocument
-$site = new DOMDocument();
-////On y charge le contenu qu'on a récupéré avec cURL
-$site->loadHTML($res);
-////On parcourt les balises <div>
-foreach($site->getElementsByTagName('div') as $div)
-{
-	////Si l'id de la page est img
-	if($div->getAttribute('id') == <img>){
-
-		////On met le contenu du premier <p> dans une variable
-		$premierP = trim($div->getElementsByTagName('p')->item(0)->nodeValue);
-		////Si le premier <p> est vide ou ne contient pas du texte
-		while($premierP == '<br>' || $premierP == '<br />' || $premierP == ''){
-			////On le supprime
-			$div->removeChild($div->getElementsByTagName('p')->item(0));
-			////Et on passe au <p> suivant
-			$premierP = trim($div->getElementsByTagName('p')->item(0)->nodeValue);
-		};
-		//
-
-		try{
-			//On parcourt toutes les tables
-			foreach( $div->getElementsByTagName('table') as $table )
-			{
-				////Et on les supprime
-				$div->removeChild($table);
-			}
-		} catch(Exception $e){
-			////On censure :P
-		}
-
-		//On récupère le contenu de la fameuse balise <p> dans une variable
-		$description = '<p>' . $div->getElementsByTagName('p')->item(0)->nodeValue. '</p>';
+	exit() ;
+else {
+	$html = getHtml($argv[1]);
+	if (!empty($html)){
+		$images = isolateImg($html, argv[1]);
+		$folder = createR($argv[1]);
+		dwnldImg($images, $filename);
 	}
 }
-//
-////On enlève la syntaxe propre à Wikipedia
-$description = preg_replace('/\[[0-9]*\][,]|\[[0-9]*\]/', '', $description);
-//
-////On affiche de résultat
-echo $description;
-//
 ?>

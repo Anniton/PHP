@@ -129,7 +129,7 @@ section {
 
 .brick {
 
-	background-image: url("../resources/brick.jpg");
+	background-image: url("./resources/brick.jpg");
 	width: 120px;
 	height: 70px;
 	position: fixed;

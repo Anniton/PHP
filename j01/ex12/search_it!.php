@@ -1,19 +1,15 @@
 #!/usr/bin/php
 <?php
-if ($argc > 2)
-{
-	$i = 2;
-	foreach ($argv as $elem)
-		if ($elem == argv[0] || $elem == argv[1])
-			echo "";
-		else
-		{
-			$nb = explode(':', $elem);
-			if ($nb[0] == $argv[1])
-				$res = $nb[1];
-		}
-	if ($nb[0] != $argv[1])
-		echo "";
-	else
-		echo "$res\n";
+if ($argc < 3)
+	exit();
+$needle = $argv[1];
+unset($argv[0], $argv[1]);
+$argv = array_reverse($argv);
+foreach ($argv as $elem){
+	$nb = explode(":", $elem);
+	if ($needle === $nb[0]){
+		echo $nb[1] . PHP_EOL;
+		exit();
+	}
 }
+?>

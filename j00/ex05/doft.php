@@ -11,10 +11,6 @@
 <body>
 	<div id="global">
 		<img id="cluster" src="https://images.unsplash.com/photo-1526653111374-539dc6d42575?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1570&q=80" alt="cluster" usemap="#clustermap" height="570" width="1020" name="imagecluster"></div>
-	<map name="clustermap">
-		<area shape="circle" coords="400,370,100" href="https://www.ikea.com/" alt="ikea">
-		<area shape="circle" coords="910,330,100" href="https://www.apple.com/" alt="apple">
-	</map>
 
 <!-----------------------------------------CLUSTER---------------------------------------->
 	<section> <img id="doft" src="./resources/day_of_the_42.png" alt="DOFT"></section>
@@ -63,7 +59,7 @@
 			<div>
 				<img class="arrow" src="./resources/arrow.png" alt="Avancer" title="Avancer" usemap="#volcan" >
 				<map name="volcan">
-					<area shape="rect" coords="0,0,75,75" href="http://localhost:8080/j00/ex05/volcan.html" alt="volcan">
+					<area shape="rect" coords="0,0,75,75" href="/j00/ex05/volcan.html" alt="volcan">
 				</map>
 			</div>
 			<div>

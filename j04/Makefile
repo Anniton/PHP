@@ -6,12 +6,12 @@
 #    By: nihuynh <nihuynh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/01/12 11:45:24 by nihuynh           #+#    #+#              #
-#    Updated: 2019/03/21 16:50:50 by aquan            ###   ########.fr        #
+#    Updated: 2019/03/29 14:57:39 by aquan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 IP		=	http://localhost:8080/j04
-PATH	=	~/Users/aquan/PHP/j04
+PATH	=	~/Users/aquan/PHP_github/j04
 
 all : ex00 ex01 ex02 ex03
 .PHONY : all

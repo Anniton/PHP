@@ -1,0 +1,12 @@
+<- Vertex ----------------------------------------------------------------------
+
+
+An instance can be construted from either XYZ value :
+
+The coordinates are converted to decimals.
+You can choose to change the value of w, otherwise it's initialized at 1.00.
+
+The class Vertex can be completed by adding colors :
+Create a new instance with new Color (for more informations refer to Color.doc.txt)
+
+---------------------------------------------------------------------- Vertex ->

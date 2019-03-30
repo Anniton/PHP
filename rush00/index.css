@@ -1,0 +1,251 @@
+body {
+    
+    background-image:url("https://images.unsplash.com/photo-1517757814062-2a2c761218f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=935&q=80");
+    font-family:'MS Serif', 'New York', sans-serif;
+    
+}
+a{
+    text-decoration: none;
+}
+/*******************HEADER******************************/
+header {
+  
+    width:100%;
+    background-color:black;
+    height: 40px;
+}
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    margin:10px auto;
+    width: 100%;
+    height:100px;
+    background-color:rgba(0,0,0,0.7);
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+ }
+.mySlides {
+    position:relative;
+    top:80%;
+    display:none;
+    height:50%;
+    width:100%
+}
+.home {
+    position: fixed;
+    left: 70px;
+    top:8px;
+    background-color: black;
+    color: white;
+    width: 60px;
+    height:40px;
+    vertical-align:middle;
+    line-height: 40px;
+    text-align: left;
+}
+.login{
+    position: fixed;
+    right: 70px;
+    top:8px;
+    background-color: black;
+    color: white;
+    width: 60px;
+    height:40px;
+    vertical-align:middle;
+    line-height: 40px;
+    text-align: left;
+}
+.create{
+    position: fixed;
+    right: 150px;
+    top:8px;
+    background-color: white;
+    color: black;
+    width: 60px;
+    line-height:20px;
+    text-align: center;
+    height:40px;
+}
+.panier {
+    position: fixed;
+    right: 8px;
+    top:-8px;
+    background-color: white;
+    width: 60px;
+    text-align: center;
+
+}
+.panier img{ /*les images dans panier*/
+    width: 40px;
+}
+
+.main-all-navigation span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 30px;
+    background: white;
+    border-radius: 0;
+    opacity: 1;
+    left: 15px;
+    transition: .25s ease-in-out;
+}
+
+.span1{
+    top:12px;
+}
+.span2{
+    top:21px;
+}
+.span3{
+    top:30px;
+}
+/****************************CATEGORIE****************************/
+.categ{
+    display:flex;
+}
+.cat{
+    width: 120px;
+    height: 60px;
+    margin:10px auto;
+    color:goldenrod;
+    background-color: lightcyan;
+    text-align:center;
+    line-height: 30px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+/****************************VITRINE*******************************/
+.ligne1{
+    display: flex;
+}
+.v1{
+    width: 25%;
+    top: 30%;
+    margin: 10px;
+    padding-top:15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    background-color: rgba(0,0,0,0.2)
+}
+.price {
+    color:white;
+    font-size: 30px;
+    margin: 15px;
+    padding:15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+    
+}
+.nb{
+   width: 60px;
+   height: 20px;
+   margin: 15px;
+}
+.flex{
+    display:flex;
+
+}
+.produit{
+    flex-direction: column; 
+	height:200px;
+	width:200px;
+    border-radius:50%;
+    margin: 10px;
+    position:relative;
+    top:-5%;
+   
+}
+#menu {
+    position: fixed;
+    right: 0;
+    top: 20%;
+    width: 8em;
+    margin-top: -2.5em;
+  }
+/************************************LOGIN*************************/     
+.rect-log {
+    width: 600px;
+    background-color: rgba(255,255,255,0.7);
+    margin: 10% auto;
+    padding: 75px 50px 50px 50px;
+    position: relative;
+    height:400px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+.reg-log{
+    width: 600px;
+    background-color: rgba(255,255,255,0.7);
+    margin: 10% auto;
+    padding: 75px 50px 50px 50px;
+    position: relative;
+    height:750px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+}
+
+.input{
+    border: 3px solid #efefef;
+    height: 50px;
+    line-height: 50px;
+    clear: both;
+    display: block;
+    padding: 0;
+    text-indent: 10px;
+    margin: 20px auto;
+    outline: 0;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+.button {
+    background-color: goldenrod;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  .notIs{
+      margin-top:150px;
+  }
+
+  .linktext {
+      color:goldenrod;
+  }
+
+  /*****************************************ADM_USER********************/
+
+
+  table{
+    background-color:none;
+    margin:10px auto;
+    padding: 75px 50px 50px 50px;
+    position: relative;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  }
+
+  td{
+    max-width: 200px;
+  /*  background-color:rgba(0,0,0,0.7);*/
+    margin:20px;
+    color:goldenrod;
+    text-align: center;
+    max-height: 40px;
+  }
+
+  .add{
+    background-color:rgba(0,0,0,0.7);
+    border: none;
+    color: goldenrod;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }

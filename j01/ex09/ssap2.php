@@ -65,5 +65,96 @@ if ($argc != 1)
 			echo $v.PHP_EOL;
 	else
 		echo "";
+}/*
+function epur_str($str)
+{
+	$str = trim($str);
+	$tmp = $str;
+	$str = str_replace("  ", " ", $str);
+	while (strcmp($str, $tmp) != 0)
+	{
+		$tmp = $str;
+		$str = str_replace("  ", " ", $str);
+	}
+	return (explode(" ", $str));
 }
+function append(&$tab, $str)
+{
+	$len = count($tab);
+	$tab[$len] = $str;
+}
+function is_alpha($str)
+{
+	$alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+	$i = 0;
+	$len = strlen($str);
+	while ($i < $len)
+	{
+		if (strpos($alphabet, $str[$i]) == False)
+			return (False);
+		$i++;
+	}
+	return (True);
+}
+function sort_array(&$tab)
+{
+	$index = count($tab);
+	$i = 0;
+	while ($i < ($index - 1))
+	{
+		$j = $i + 1;
+		while ($j < $index)
+		{
+			if (strcasecmp($tab[$j], $tab[$i]) < 0)
+			{
+				$tmp = $tab[$i];
+				$tab[$i] = $tab[$j];
+				$tab[$j] = $tmp;
+			}
+			$j++;
+		}
+		$i++;
+	}
+}
+function print_arrays($alph, $num, $others)
+{
+	sort_array($alph);
+	foreach ($alph as $a)
+		echo "$a\n";
+	sort_array($num);
+	foreach ($num as $n)
+		echo "$n\n";
+	sort_array($others);
+	foreach ($others as $o)
+		echo "$o\n";
+}
+function fill_arr(&$alph, &$num, &$others, $str)
+{
+	if (is_numeric($str))
+		append($num, $str);
+	else if (is_alpha($str))
+		append($alph, $str);
+	else
+		append($others, $str);
+}
+if ($argc > 1)
+{
+	$alph = array();
+	$num = array();
+	$others = array();
+	$i = 1;
+	while ($i < $argc)
+	{
+		if (strpos($argv[$i], " "))
+		{
+			$tab = epur_str($argv[$i]);
+			foreach ($tab as $t)
+				fill_arr($alph, $num, $others, $t);
+		}
+		else
+			fill_arr($alph, $num, $others, $argv[$i]);
+		$i++;
+	}
+	print_arrays($alph, $num, $others);
+}*/
 ?>

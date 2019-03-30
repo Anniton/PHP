@@ -1,16 +1,10 @@
 <?php
+
 Class Color {
 	public $red = 0;
 	public $green = 0;
 	public $blue = 0;	
 	static $verbose = false;
-
-	public function doc(){
-		$fd = fopen("Color.doc.txt","r");
-		while ($fd && !feof($fd))
-			echo fgets($fd);
-		fclose($fd);
-	}
 	public function __construct(array $kwargs) {
 		//	print('Constructor called' . PHP_EOL);
 		if (array_key_exists('red', $kwargs) && array_key_exists('green', $kwargs) &&  array_key_exists('blue', $kwargs))
@@ -22,7 +16,7 @@ Class Color {
 		else if  (array_key_exists('rgb', $kwargs))
 
 		{
-			//	$this->rgb = $kwargs['rgb'] >> 24;
+		//	$this->rgb = $kwargs['rgb'] >> 24;
 			$this->red = $kwargs['rgb'] >> 16;
 			$this->green = $kwargs['rgb'] >> 8;
 			$this->blue = $kwargs['rgb'] >> 24;
@@ -32,7 +26,7 @@ Class Color {
 			$this->red = $kwargs['red'];
 			$this->green = $kwargs['green'];
 			$this->blue = $kwargs['blue'];
-
+	
 		}
 		if (self::$verbose == true) {
 			//	var_dump($this->red);

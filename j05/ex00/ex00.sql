@@ -1,1 +1,1 @@
-CREATE DATABASE 'db_aquan';
+CREATE DATABASE db_aquan;

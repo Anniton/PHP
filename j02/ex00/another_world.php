@@ -2,10 +2,13 @@
 <?php
 if ($argc > 1)
 {
-
-	foreach ($argv as $word)
-		$keywords = preg_split("/\s+/", "$argv[1]");
-	$space_separated = implode(" ", $keywords);
-	echo "$space_separated\n";
+	if ($argv[1] === "")
+		exit();
+	else{	
+		$space_separated = trim(preg_replace("/[\t\r\s]+/"," ", "$argv[1]"));
+		echo "$space_separated\n";
+	}
 }
+else
+	exit();
 ?>

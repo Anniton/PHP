@@ -1,25 +1,23 @@
 #!/usr/bin/php
 <?PHP
-function ft_split_no($str)
-{
-	$tab = explode(" ", $str);
-	return($tab);
-}
-if ($argv[1] === "")
-	exit();
-else{
-	$word = trim($argv[1]);
-	$tab = str_ireplace("  ", " ", $word);	
-	while (strstr($tab, "  "))
-		$tab = str_ireplace("  ", " ", $tab);
-	$array = explode(" ", $tab);	
-	$first = array_shift($array);
-	foreach ($array as $elem)
-	{
-		echo "$elem ";
-	}
-	echo $first;
 if ($argc > 1)
-	echo PHP_EOL;
+{
+	if ($argv[1] === "")
+		exit();
+	else {
+		$i = 0;
+		while($i < $argc)
+		{
+			$str = trim(preg_replace("/[\t\r\s\s]+/", " ", $argv[1]));
+			$word = explode(" ", $str);
+			$i++;
+		}
+		$i = 1;
+		while($i < count($word)){
+			echo ($word[$i]." ");
+			$i++;
+		}
+		echo $word[0]. PHP_EOL;
+	}
 }
 ?>

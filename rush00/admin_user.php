@@ -1,12 +1,18 @@
 <?php
 session_start();
 
-if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
+include('header.php');
+if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
     header('Location: index.php');
     exit();
-    include('header.php');
 }
-
+require_once('users.php');
+if ($_POST['add'] === "OK")
+    adduser($_POST['login'], $_POST['passwd'], $_POST['fname'], $_POST['lname'], $_POST['mail'], 0);
+if ($_POST['mod'] === "OK")
+    moduser($_POST['login'], $_POST['passwd'], $_POST['fname'], $_POST['lname'], $_POST['mail'], 0);
+if ($_POST['del'] === "OK")
+    deluser($_POST['login']);
 ?>
 
 <!--Doctype html-->
@@ -38,17 +44,29 @@ if (isset($_SESSION['pseudo']) && !empty($_SESSION['pseudo'])) {
         <td>PRENOM</td>
         <td>MAIL</td>
         <td>ADRESSE</td>
-        <td>RETIRER</td>
+        <td>MODIFIER</td>
         <td>AJOUTER</td>
     </tr>
     <tr>
-        <td><input class="input" type="text" name="pseudo" placeholder="Identifiant" class=""></td>
-        <td><input class="input"  type="text" name="lastname" placeholder="Nom"></td>
-        <td><input class="input"  type="text" name="firstname" placeholder="Prénom"></td>
-        <td><input class="input"  type="email" name="email" placeholder="Mail"></td>
+    <form action="admin_user.php" method=POST>
+        <td><input class="input" type="text" name="login" placeholder="Identifiant" class="" value=""></td>
+        <td><input class="input"  type="text" name="lname" placeholder="Nom"></td>
+        <td><input class="input"  type="text" name="fname" placeholder="Prénom"></td>
+        <td><input class="input"  type="email" name="mail" placeholder="Mail"></td>
         <td><input class="input"  type="text" name="address" placeholder="Adresse"></td>
+        <td><input type="submit" name="mod" value="OK"></td>
+        <td><input type="submit" name="add" value="OK"></td>
+    </form>
+    </tr>
+    <tr>
+    
+        <form action="admin_user.php" method=POST>
+        <td><input class="input" type="text" name="login" placeholder="Identifiant à supprimer" class="" value=""></td>
         <td></td>
-        <td> <a class="add" href="admin_user.php">✓</a></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><input type="submit" name="del" value="OK"></td>
     </tr>
 </table>
 

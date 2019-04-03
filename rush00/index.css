@@ -1,6 +1,7 @@
 body {
     
     background-image:url("https://images.unsplash.com/photo-1517757814062-2a2c761218f8?ixlib=rb-1.2.1&auto=format&fit=crop&w=935&q=80");
+    background-size: cover;
     font-family:'MS Serif', 'New York', sans-serif;
     
 }
@@ -20,7 +21,7 @@ header {
     bottom: 0;
     margin:10px auto;
     width: 100%;
-    height:100px;
+    height:40px;
     background-color:rgba(0,0,0,0.7);
     color: white;
     text-align: center;
@@ -114,45 +115,47 @@ header {
     background-color: lightcyan;
     text-align:center;
     line-height: 30px;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+
 }
 /****************************VITRINE*******************************/
-.ligne1{
-    display: flex;
+.container{
+    display: grid;
+    grid-template-columns: [l1] 1fr [l2] 1fr [l3] 1fr [l4] 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 10px 10px;
+    align-items: stretch;
+    justify-items: stretch;
+    align-content: stretch;
+    justify-content: stretch;
+    
 }
 .v1{
-    width: 25%;
-    top: 30%;
     margin: 10px;
     padding-top:15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    background-color: rgba(0,0,0,0.2)
+    background-color: rgba(0,0,0,0.3);
+    text-align: center;
 }
 .price {
     color:white;
     font-size: 30px;
-    margin: 15px;
     padding:15px;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-    
-}
-.nb{
-   width: 60px;
-   height: 20px;
-   margin: 15px;
-}
-.flex{
-    display:flex;
 
 }
+.nb{
+   width: 40px;
+   height: 40px;
+  }
+  
 .produit{
-    flex-direction: column; 
 	height:200px;
 	width:200px;
     border-radius:50%;
     margin: 10px;
     position:relative;
     top:-5%;
+
    
 }
 #menu {

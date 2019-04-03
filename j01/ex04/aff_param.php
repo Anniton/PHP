@@ -2,12 +2,8 @@
 <?php
 if ($argc > 1)
 {
+	unset($argv[0]);
 	foreach ($argv as $elem)
-	{
-		if ($elem == $argv[0])
-			echo "";
-		else
 			echo "$elem\n";
-	}
 }
 ?>

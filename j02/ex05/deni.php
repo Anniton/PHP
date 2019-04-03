@@ -8,16 +8,16 @@ $fd = fopen($file, "r");
 while ($fd && !feof($fd)) {
 	$tab[] = explode(";", fgets($fd)); 
 }
-$title = $tab[0]; /*dans title on a nom prenom mail ID pseudo*/
+$title = $tab[0]; #dans title on a nom prenom mail ID pseudo#
 foreach ($title as $elem => $value)
 	$title[$elem] = trim($value);
-$idx = array_search($argv[2], $title); /*on cherche dans le tab  title si on a argv2*/
+$idx = array_search($argv[2], $title); #on cherche dans le tab  title si on a argv2#
 if (!$idx)
 	exit();
 foreach ($title as $elem => $value){
 	$tmp = array();
 	foreach ($tab as $e) {
-		//if(isset($e[$idx]))
+		if(isset($e[$idx]))
 			$tmp[trim($e[$idx])] = trim($e[$elem]);}
 	$$value = $tmp;
 }

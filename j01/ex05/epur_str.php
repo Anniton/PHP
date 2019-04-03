@@ -7,7 +7,7 @@ if ($argc == 2)
 	if ($argv[1] === '')
 		exit();
 	else{
-		$word = preg_replace('/\s\s+/', ' ', $argv[1]);
+		$word = preg_replace('/[\t\r\s]+/', ' ', $argv[1]);
 		$string = trim($word);
 		echo "$string\n";
 	}

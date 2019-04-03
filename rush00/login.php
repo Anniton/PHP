@@ -6,11 +6,10 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
     exit;
 }
 	$pass = hash('whirlpool', $passwd);
-    if (!$login || !$passwd){
+ /*   if (!$login || !$passwd){
         header('Location: erreur.php');
         exit;
-    }
-
+    }*/
 	if (!file_exists('../htdocs'))
 		mkdir("../htdocs");
 	if (!file_exists('../htdocs/private'))
@@ -18,7 +17,6 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
 	if (!file_exists('../htdocs/private/passwd')) {
 		file_put_contents('../htdocs/private/passwd', null);
 	}
-
 	$tab = unserialize(file_get_contents('../htdocs/private/passwd'));
 	if ($tab)
 	{
@@ -31,8 +29,8 @@ if (isset($_SESSION['login']) && !empty($_SESSION['login'])) {
             }
 		}
 	}
-	else
-        header('Location: erreur.php');
+	/*else
+        header('Location: erreur.php');*/
 ?>
 
 <!---------------------Doctype html-------------------------->

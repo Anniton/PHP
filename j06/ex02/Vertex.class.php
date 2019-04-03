@@ -10,7 +10,7 @@ Class Vertex {
 	private $_color;
 	static $verbose = false;
 
-	public function doc(){
+	public static function doc(){
 		$fd = fopen("Vertex.doc.txt","r");
 		while ($fd && !feof($fd))
 			echo fgets($fd);

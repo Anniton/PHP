@@ -18,18 +18,8 @@
 		<div class="rectangled"></div>
 		<div id="textl"class="rectanglev">Vous <span id=enter>entrez</span> alors dans une grande piece remplie d'<span id="red">ordinateurs</span>...<br />
 			<span id=text>- Bonjour, vous êtes nouveau ici ?</span>
-			<form method="post" action="http://localhost:8080/j00/ex05/doft.php">
+			<form method="post" action="doft.html">
 				<p>
-					<?php
-					if (!empty($_POST['user_text']) && $_POST['user_text'] != "")
-					{if ($_POST['user_text'] === "Oui" || $_POST['user_text'] === "oui")
-						{echo "Bienvenue à toi !" . PHP_EOL; }
-						else if($_POST['user_text'] === "Non" || $_POST['user_text'] === "non")
-						{echo "C'est donc votre harem ? Est-ce vous maitre ?";}
-						else {
-							echo "<font size='3px'>argh, vous dites n'importe quoi, où sont vos médicaments!</font>";
-						}
-				 } ?>
 				<label for="pseudo"></label>
 				<input id="bord" type="text"  size="65" maxlength="60" name="user_text"/>
 				<input id="submit" type="submit" value="Repondre" />
@@ -59,7 +49,7 @@
 			<div>
 				<img class="arrow" src="./resources/arrow.png" alt="Avancer" title="Avancer" usemap="#volcan" >
 				<map name="volcan">
-					<area shape="rect" coords="0,0,75,75" href="/j00/ex05/volcan.html" alt="volcan">
+					<area shape="rect" coords="0,0,75,75" href="volcan.html" alt="volcan">
 				</map>
 			</div>
 			<div>

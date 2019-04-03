@@ -4,7 +4,7 @@ $path = "../htdocs/private";
 $file = "/passwd";
 if ($_POST['passwd'] && $_POST['login'] && $_POST['submit']  && $_POST['submit'] === "OK")
 {
-	if (!file_exists($path ))
+	if (!file_exists($path))
 	{
 		mkdir("../htdocs");
 		mkdir($path);
@@ -27,9 +27,7 @@ if ($_POST['passwd'] && $_POST['login'] && $_POST['submit']  && $_POST['submit']
 	}
 	else
 	{
-	//	$tmp['login'] = $_POST['login'];
 		$_POST['passwd'] = hash('whirlpool', $_POST['passwd']);
-	//	$tab[] = $tmp;
 		$tab[] = $pass = array('login'=>$_POST['login'], 'passwd'=>$_POST['passwd']);
 		file_put_contents($path.$file, serialize($tab));
 		echo "OK\n";

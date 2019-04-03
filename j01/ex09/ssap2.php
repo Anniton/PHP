@@ -1,160 +1,76 @@
 #!/usr/bin/php
 <?php
+function tab_sort($one, $two)
+{
+	$one = strtolower($one);
+	$two = strtolower($two);
+	foreach(range('a','z') as $i) {
+		$alphatab[] = $i;
+	}
+	$alphatab[] = '0';	
+	$alphatab[] = '1';
+	$alphatab[] = '2';	
+	$alphatab[] = '3';
+	$alphatab[] = '4';	
+	$alphatab[] = '5';
+	$alphatab[] = '6';	
+	$alphatab[] = '7';
+	$alphatab[] = '8';	
+	$alphatab[] = '9';
+	if (strlen($one) < strlen($two))
+		$length = strlen($one);
+	else
+		$length = strlen($two);
+	$i = 0;
+	while ($i < $length)
+	{
+		$letterone = substr($one, $i, 1);
+		$lettertwo = substr($two, $i, 1);
+		$keyone = array_search($letterone, $alphatab);
+		$keytwo = array_search($lettertwo, $alphatab);
+		if ($keyone === false)	
+			$keyone = ord($letterone) + 100;
+		else
+			$keyone = $keyone;
 
+		if ($keytwo === false)
+			$keytwo = ord($lettertwo) + 100;
+		else
+			$keytwo = $keytwo;
+		if ($keytwo < $keyone){
+			return false;}
+		if ($keytwo > $keyone)
+			return true;
+		$i++;
+	}
+	return strlen($one) <= strlen($two) ? true : false;
+}
+/*************Gerer les zeros***************/
 function myFilter($var){
 	return ($var !== NULL && $var !== FALSE && $var !== '');
 }
-function ft_split($string)
+$tab = array();
+unset($argv[0]);
+/*************Isoler dans un tableau********/
+foreach($argv as $elem)
 {
-	$my_tab=explode(" ", $string);
-	if (isset($my_tab) === true)
-	{
-		$res = array_filter($my_tab, 'myFilter');
-		$word = array_values(($res));
-	}
-	sort($word);
-	return($word);
+	$tmp = array_filter(explode(" ", $elem), 'myFilter');
+	foreach ($tmp as $value)
+		$tab[] = $value;
 }
-
-if ($argc != 1)
+/*******************swap*********************/
+$i = 0;
+while($i < count($tab) - 1)
 {
-	$i = 1;
-	while ($i < $argc)
-		$string .= " ".$argv[$i++]." "; 
-	$strtrim = trim($string);
-	$my_tab = ft_split($strtrim);
-
-	foreach ($my_tab as $alpha)
-	{
-		if (ctype_alpha($alpha))
-		{
-			$alphabetic[] = $alpha;
-			natcasesort($alphabetic);
-		}
-	}
-	if ($alphabetic)
-		foreach ($alphabetic as $v)
-			echo $v.PHP_EOL;
-	else
-		echo "";
-
-	foreach ($my_tab as $nb)
-	{
-		if (is_numeric($nb))
-		{
-			$numeric[] = $nb;
-			sort($numeric, SORT_STRING);
-		}
-	}
-	if ($numeric)
-		foreach ($numeric as $v)
-			echo $v.PHP_EOL;
-	else
-		echo "";
-
-	foreach ($my_tab as $oth)
-	{
-		if ((ctype_alpha($oth) == false) && (is_numeric($oth) == false))
-		{
-			$other[] = $oth;
-			natcasesort($other);
-		}
-	}
-	if ($other)
-		foreach ($other as $v)
-			echo $v.PHP_EOL;
-	else
-		echo "";
-}/*
-function epur_str($str)
-{
-	$str = trim($str);
-	$tmp = $str;
-	$str = str_replace("  ", " ", $str);
-	while (strcmp($str, $tmp) != 0)
-	{
-		$tmp = $str;
-		$str = str_replace("  ", " ", $str);
-	}
-	return (explode(" ", $str));
-}
-function append(&$tab, $str)
-{
-	$len = count($tab);
-	$tab[$len] = $str;
-}
-function is_alpha($str)
-{
-	$alphabet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-	$i = 0;
-	$len = strlen($str);
-	while ($i < $len)
-	{
-		if (strpos($alphabet, $str[$i]) == False)
-			return (False);
+	if (tab_sort($tab[$i], $tab[$i + 1])) {
 		$i++;
-	}
-	return (True);
-}
-function sort_array(&$tab)
-{
-	$index = count($tab);
-	$i = 0;
-	while ($i < ($index - 1))
-	{
-		$j = $i + 1;
-		while ($j < $index)
-		{
-			if (strcasecmp($tab[$j], $tab[$i]) < 0)
-			{
-				$tmp = $tab[$i];
-				$tab[$i] = $tab[$j];
-				$tab[$j] = $tmp;
-			}
-			$j++;
-		}
-		$i++;
+	} else {
+		$tmp = $tab[$i];
+		$tab[$i] = $tab[$i + 1];
+		$tab[$i + 1] = $tmp;
+		$i = 0;
 	}
 }
-function print_arrays($alph, $num, $others)
-{
-	sort_array($alph);
-	foreach ($alph as $a)
-		echo "$a\n";
-	sort_array($num);
-	foreach ($num as $n)
-		echo "$n\n";
-	sort_array($others);
-	foreach ($others as $o)
-		echo "$o\n";
-}
-function fill_arr(&$alph, &$num, &$others, $str)
-{
-	if (is_numeric($str))
-		append($num, $str);
-	else if (is_alpha($str))
-		append($alph, $str);
-	else
-		append($others, $str);
-}
-if ($argc > 1)
-{
-	$alph = array();
-	$num = array();
-	$others = array();
-	$i = 1;
-	while ($i < $argc)
-	{
-		if (strpos($argv[$i], " "))
-		{
-			$tab = epur_str($argv[$i]);
-			foreach ($tab as $t)
-				fill_arr($alph, $num, $others, $t);
-		}
-		else
-			fill_arr($alph, $num, $others, $argv[$i]);
-		$i++;
-	}
-	print_arrays($alph, $num, $others);
-}*/
+foreach ($tab as $elem)
+	echo $elem . PHP_EOL;
 ?>

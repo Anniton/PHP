@@ -1,0 +1,178 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<style>
+body{
+	background-color: rgb(240, 238, 218);
+}
+		input {
+			display: block;
+			font: 1rem 'Fira Sans', sans-serif;
+			text-align: center;
+			margin: .15rem 0;
+			font-size: .8em;
+			width:240px;
+			height:70px;
+			border-radius: 10px;
+		}
+		label,footer {
+			font-family: sans-serif;
+		}
+		label {
+			font-size: 1rem;
+			padding-right: 10px;
+		}
+		select {
+			font-size: .9rem;
+			padding: 2px 5px;
+			width:245px;
+			text-align: center;
+		}
+		footer {
+			font-size: .8rem;
+			position: absolute;
+			bottom: 30px;
+			left: 30px;
+		}
+		.output {
+			width:250px;
+			background-color:rgb(56, 58, 48);
+			background-color: linear-gradient(to top left,
+				rgba(0, 0, 0, .2),
+				rgba(0, 0, 0, .2) 30%,
+				rgba(0, 0, 0, 0));
+			margin: 10% auto;
+			border-radius: 5%;
+			padding: 75px 50px 50px 50px;
+			position: relative;
+			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+		}
+		.styled {
+			width:250px;
+			border: 0;
+			line-height: 2.5;
+			padding: 0 20px;
+			font-size: 1rem;
+			text-align: center;
+			color: #fff;
+			text-shadow: 1px 1px 1px #000;
+			border-radius: 10px;
+			background-color: rgb(155, 209, 84);
+			background-image: linear-gradient(to top left,
+				rgba(0, 0, 0, .2),
+				rgba(0, 0, 0, .2) 30%,
+				rgba(0, 0, 0, 0));
+			box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+				inset -2px -2px 3px rgba(0, 0, 0, .6);
+		}
+		.styled:hover {
+			background-color: rgb(151, 194, 82);
+		}
+		.styled:active {
+			box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+				inset 2px 2px 3px rgba(0, 0, 0, .6);
+		}
+        </style>
+        
+        <script>
+        $(document).ready(function(){
+			calculator = $('#calculator');
+			nb1 = $('#nb1');
+            nb2 = $('#nb2')
+            op = $('#op')
+            calculator.submit(submit);
+            // calculator.on('submit', function(e){
+            //     e.prevent.Default();
+            //     var l = $('l').val();
+            //     var r = $('r').val();
+            setInterval("alert('Please, use me...')", 30000);
+
+            // });
+            });
+            function exec(){
+                //var l = document.forms["calculator"]["nb1"].val();
+                //var l = ("form_id").submit();
+                var r = document.forms["calculator"]["nb2"].val();
+                var op = document.forms["calculator"]["operator"].val();
+                var nb1;
+                var nb2;
+                var res;
+                res = 0;
+                nb1 = parseInt(l);
+                nb2 = parseInt(r);
+            
+                if (nb1>= 0 && nb2 >= 0){
+                    switch (op){
+                        case "add":
+                            res = nb1 + nb2;
+                            console.log(res);
+                            alert(res);
+                            break;
+                        case "sou":
+                            res = nb1 - nb2;
+                            console.log(res);
+                            alert(res);
+                            break;
+                        case "mul":
+                            res = nb1 * nb2;
+                            console.log(res);
+                            alert(res);
+                            break;
+                        case "div":
+                            if (nb2 <= 0){
+                                alert("It's over 9000!");
+                                console.log("Error :(")
+                            } else {
+                                res = nb1 / nb2;
+                                console.log(res);
+                                alert(res);
+                            }
+                            break;
+                        case "mod":
+                            if (nb2 <= 0){
+                                alert("It's over 9000!");
+                                console.log("Error :(")
+                            } else {
+                                res = nb1 % nb2;
+                                console.log(res);
+                                alert(res);
+                            }
+                            break;
+                        default:
+                            return("Wrong operation");
+                            break;
+                    }
+                }
+                else
+                    alert("Error :(");
+            
+            
+            }
+        </script>
+	</head>
+
+
+
+	<body>
+		<div class="output">
+			<form id="calculator" onsubmit="return exec()" method="post">
+
+				<input type="text" id="nb1"/>
+				<select class="align" id="operator">
+					<option value="">------Choose an operator------</option>
+					<option value="add">+</option>
+					<option value="sou">-</option>
+					<option value="mul">*</option>
+					<option value="div">/</option>
+					<option value="mod">%</option>
+				</select>
+				<input type="text" id="nb2"/>
+				<input class="favorite styled" type="submit" id="Try me!" value="Try me!">
+
+			</form>
+		</div>
+
+	</body>
+</html>

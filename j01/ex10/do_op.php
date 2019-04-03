@@ -24,13 +24,8 @@ if ($argc == 4)
 		}
 		else if ($op == "/")
 		{
-			if ($nb2 == 0)
-				echo "Division by zero\n";
-			else
-			{	
 				$res = $nb1 / $nb2;
 				echo "$res\n";
-			}
 		}
 		else if ($op == "%")
 		{
@@ -38,6 +33,8 @@ if ($argc == 4)
 			echo "$res\n";
 		}
 }
-if ($argc != 4)
+if ($argc != 4){
 	echo "Incorrect Parameters\n";
+	exit();
+}
 ?>

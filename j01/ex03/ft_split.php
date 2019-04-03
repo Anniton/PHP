@@ -5,7 +5,7 @@ function myFilter($var){
 }
 function ft_split($string)
 {
-	$my_tab=explode(" ", $string); //transforme une chaine de char en tableau
+	$my_tab = explode(" ", $string); 
 	if (isset($my_tab) === true)
 	{
 		$res = array_filter($my_tab, 'myFilter');

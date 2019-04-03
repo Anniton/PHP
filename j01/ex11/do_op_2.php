@@ -1,59 +1,43 @@
 #!/usr/bin/php
 <?php
-
-if ($argc != 2)
-{
+if ($argc != 2){
 	echo "Incorrect Parameters\n";
-		exit();
+	exit();
 }
-if ($argc == 2)
-{	
-	//si + existe
-	if (strpos($argv[1], "+") !== FALSE)	
-		$nb = explode('+', $argv[1]);
-	else if (strpos($argv[1], "-") !== FALSE)	
-		$nb = explode('-', $argv[1]);
-	else if (strpos($argv[1], "/") !== FALSE)	
-		$nb = explode('/', $argv[1]);
-	else if (strpos($argv[1], "*") !== FALSE)	
-		$nb = explode('*', $argv[1]);
-	else if (strpos($argv[1], "%") !== FALSE)	
-		$nb = explode('%', $argv[1]);
-	else
-	{	
-		echo "Syntax Error\n";
-		exit ;
-	}
-	if (count($nb) != 2)
+$get = str_replace(" ", "", $argv[1]);
+$nb1 = intval($get);
+$length1 = strlen($nb1);
+$op = substr(substr($get, strlen($nb1)), 0, 1);
+$nb2 = substr(substr($get, strlen($nb1)), 1);
+if (is_numeric($nb1) && is_numeric($nb2)) {
+	if ($op == "+")
 	{
-		echo "Syntax Error\n";
-		exit ;
+		$res = $nb1 + $nb2;
+		echo "$res\n";
 	}
-	else
+	else if ($op == "-")
 	{
-		foreach ($nb as $value)
-		{
-			$val[] = trim($value);
-		}
-		if (ctype_digit($val[0]) == 1 && ctype_digit($val[1]) == 1)
-		{
-			if (strpos($argv[1], "+") !== FALSE)	
-				echo ($val[0] + $val[1]);
-			if (strpos($argv[1], "-") !== FALSE)	
-				echo ($val[0] - $val[1]);
-			if (strpos($argv[1], "/") !== FALSE)	
-				echo ($val[0] / $val[1]);
-			if (strpos($argv[1], "*") !== FALSE)	
-				echo ($val[0] * $val[1]);
-			if (strpos($argv[1], "%") !== FALSE)	
-				echo ($val[0] % $val[1]);
-			echo "\n";
-		}
-		else
-		{
-			echo "Syntax Error\n";
-			exit ;
-		}
+		$res = $nb1 - $nb2;
+		echo "$res\n";
 	}
+	else if ($op == "*")
+	{
+		$res = $nb1 * $nb2;
+		echo "$res\n";
+	}
+	else if ($op == "/")
+	{
+		$res = $nb1 / $nb2;
+		echo "$res\n";
+	}
+	else if ($op == "%")
+	{
+		$res = $nb1 % $nb2;
+		echo "$res\n";
+	}	
+}
+else{
+	echo "Syntax Error\n";
+	exit ;
 }
 ?>

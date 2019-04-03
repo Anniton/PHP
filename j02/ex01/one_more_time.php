@@ -41,9 +41,9 @@ $month = $date[2];
 $year = $date[3];
 $time = $date[4];
 
-if (preg_match("/^[1-9]$|0[1-9]|[1-2][0-9]|3[0-1]$/", $date[1], $date[1]) === 0 //^=début de chaîne $=fin de chaîne
-	|| preg_match("/^[0-9]{4}$/", $date[3], $date[3]) === 0 //{x}accolade + nombre Obligatoire restrictif doit apparaître exactement x fois
-	|| preg_match("/^([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $date[4], $date[4]) === 0) //| barre verticale marque l'alternative
+if (preg_match("/^[1-9]$|0[1-9]|[1-2][0-9]|3[0-1]$/", $date[1], $date[1]) === 0 
+	|| preg_match("/^[0-9]{4}$/", $date[3], $date[3]) === 0 
+	|| preg_match("/^([0-1][0-9]|2[0-3]):([0-5][0-9]):([0-5][0-9])$/", $date[4], $date[4]) === 0)
 		{
 			echo "Wrong Format\n";
 			exit();
@@ -56,7 +56,6 @@ if(!($ma = array_search(lcfirst($date[2]), $english)))
 }
 
 $date[0] = array_search(lcfirst($date[0]),$jour);
-//$date[2] = array_search(lcfirst($date[2]),$mois);
 if ($date[0] === false || $date[2] === false)
 {
 	echo "Wrong Format\n";
@@ -65,14 +64,4 @@ if ($date[0] === false || $date[2] === false)
 
 	$res = new DateTime("$year-$ma-$nb $time");/*permet un decalage horaire de -1h*/	
 	echo date_timestamp_get($res) . "\n";/*fonction qui set la date en seconde */
-	
-
-
-//	$time = mktime($date[4][1], $date[4][2], $date[4][3], $date[2], $date[1][0], $date[3][0]);
-//if (date( "N", $time) == $date[0]) // "N", Représentation numérique  jour de la semaine 1 (pour Lundi) à 7 (pour Dimanche)
-//	echo $time."\n";
-//else
-//	echo "Wrong Format\n";
-
-
 ?>

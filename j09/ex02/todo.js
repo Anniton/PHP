@@ -1,62 +1,55 @@
+var element_todo = document.getElementById("new");
+element_todo.addEventListener("click", check_node);
+element_todo.addEventListener("click", todo);
 
-var div = document.getElementById("ft_list");
-div.innerHTML = decodeURIComponent(getCookie('todo'))
-var list = [];
-
-
-function readCookie(name) {
-	var nameEQ = name + "=";
-	var ca = document.cookie.split(';');
-    for(var i=0;i < ca.length;i++) 
-    {
-		var c = ca[i];
-		while (c.charAt(0)==' ') c = c.substring(1,c.length);
-		if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+function check_node (){
+	var task = document.getElementById('ft_list');
+	task.innerHTML = decodeURIComponent(getCookie('todo'));
+}
+/*https://ppk.developpez.com/tutoriels/javascript/gestion-cookies-javascript/*/
+function getCookie(name) {
+	var nom = name + "=";
+	var arr_cookie = document.cookie.split(';');
+	for(var i=0; i<arr_cookie.length; i++)
+	{
+		var one_cookie = arr_cookie[i];
+		while (one_cookie.charAt(0)==' ') one_cookie = one_cookie.substring(1);
+		if (one_cookie.indexOf(nom) == 0) return one_cookie.substring(nom.length,one_cookie.length);
 	}
-	return null;
+	return "";
+}
+function setCookie(name, value, days) {
+	var date = new Date();
+	date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+	var expires = "expires="+date.toUTCString();
+	document.cookie = name + "=" + value + "; " + expires;
 }
 
-function setCookie(name,value,days) {
-	if (days) {
-		var date = new Date();
-		date.setTime(date.getTime()+(days * 24 * 60 * 60 * 1000));
-		var expires = "; expires="+date.toGMTString();
+function todo() {
+	var new_node = prompt("What is the new thing to do ?");
+	if (new_node !== "") 
+   {
+		var content = document.getElementById('ft_list');//noeud parent
+		var add_node = document.createTextNode(new_node);	
+		var div = document.createElement("div");//nouveau todo dans la liste
+		div.appendChild(add_node);
+		div.setAttribute("onclick", "delete_todo(this)")
+		content.insertBefore(div, content.firstChild);
+		/*parentNode.insertBefore(newNode, referenceNode);*/
+		/*insère un nœud juste avant le noeud de référence en tant qu'enfant du nœud parent spécifié*/
+            date = new Date;
+            date.setMonth(date.getMonth()+1); /*expire dans un mois*/
+            date = date.toUTCString(); /*convertit une date en une chaîne de caractères, selon le fuseau horaire UTC.*/
+		setCookie('todo', encodeURIComponent(content.innerHTML), 1);
+
 	}
-	else var expires = "";
-	document.cookie = name + "=" + value + expires + "; path=/";
 }
 
-
-function eraseCookie(name) {
-	createCookie(name,"",-1);
-}
-
-
-function whatTodo(todo) {
-    var todo = prompt("Whats your task?");
-    list.unshift(todo);
-        add_list();
-}
-function add_list() {
-    clear_div();
-    list.forEach(elem_list => {
-        var enfant = document.createElement("div");
-        enfant.setAttribute("id", "task");
-        enfant.addEventListener('click', 
-        function(){
-          if (confirm('Do you really want to remove this task ?'))
-          {
-              div.removeChild(enfant);
-          }
-        },false);
-        var elementAjoute = document.createTextNode(elem_list);
-        enfant.appendChild(elementAjoute);
-        div.appendChild(enfant);
-    });
-}
-
-function clear_div() {
-    while (div.firstChild) {
-        div.removeChild(div.firstChild);
-    }
+function delete_todo(todo_idx) {
+	 if (confirm("Do you really want to delete this task ?")) 
+	 { 
+		var task = document.getElementById('ft_list');
+		task.removeChild(todo_idx);
+		setCookie('todo', encodeURIComponent(task.innerHTML), 1);
+     }
 }

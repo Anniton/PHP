@@ -30,7 +30,7 @@ $('#new').click(function() {
 	var new_node = prompt("What is the new thing to do ?");
 	if (new_node !== "") 
    {
-		$('#ft_list').prepend("<div class=eee onclick=delete_todo(this)>" + new_node + "</div>");
+		$('#ft_list').prepend("<div onclick=delete_todo(this)>" + new_node + "</div>");
         $.cookie('name', 'value', { expires: 7 });
 	}
 })

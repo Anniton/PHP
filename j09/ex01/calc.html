@@ -2,6 +2,7 @@
 
 <html lang="en">
 	<head>
+		<title>Calc</title>
 		<meta charset="UTF-8">
 		<style>
 body{
@@ -98,8 +99,8 @@ body{
 			</form>
 		</div>
 		<script>
-//  setInterval("alert('Please, use me...')", 30000);
-function exec(){
+	setInterval("alert('Please, use me...')", 30000);
+	function exec(){
 	var l = document.forms["calculator"]["nb1"].value;
 	var r = document.forms["calculator"]["nb2"].value;
 	var op = document.forms["calculator"]["operator"].value;
@@ -154,8 +155,6 @@ function exec(){
 	}
 	else
 		alert("Error :(");
-
-
 }
 		</script>
 	</body>

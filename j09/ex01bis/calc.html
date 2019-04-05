@@ -2,11 +2,16 @@
 
 <html lang="en">
 	<head>
+		<title>Calc</title>
 		<meta charset="UTF-8">
+		<script src="https://code.jquery.com/jquery-3.3.1.js"
+		integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+		crossorigin="anonymous"></script>	
+
 		<style>
-body{
-	background-color: rgb(240, 238, 218);
-}
+		body{
+			background-color: rgb(240, 238, 218);
+		}
 		input {
 			display: block;
 			font: 1rem 'Fira Sans', sans-serif;
@@ -16,7 +21,7 @@ body{
 			width:240px;
 			height:70px;
 			border-radius: 10px;
-		}
+		}  
 		label,footer {
 			font-family: sans-serif;
 		}
@@ -74,105 +79,95 @@ body{
 			box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
 				inset 2px 2px 3px rgba(0, 0, 0, .6);
 		}
-        </style>
-        
-        <script>
-        $(document).ready(function(){
-			calculator = $('#calculator');
-			nb1 = $('#nb1');
-            nb2 = $('#nb2')
-            op = $('#op')
+		</style>
+
+
+
+<script>
+	 $(document).ready(function(){
+            calculator = $('#calculator');
+            nb1 = $('#nb1').val();
+            nb2 = $('#nb2').val();
+            operator = $('#operator');
             calculator.submit(submit);
-            // calculator.on('submit', function(e){
-            //     e.prevent.Default();
-            //     var l = $('l').val();
-            //     var r = $('r').val();
-            setInterval("alert('Please, use me...')", 30000);
+           	setInterval("alert('Please, use me...')", 30000);
+        });
 
-            // });
-            });
-            function exec(){
-                //var l = document.forms["calculator"]["nb1"].val();
-                //var l = ("form_id").submit();
-                var r = document.forms["calculator"]["nb2"].val();
-                var op = document.forms["calculator"]["operator"].val();
-                var nb1;
-                var nb2;
-                var res;
-                res = 0;
-                nb1 = parseInt(l);
-                nb2 = parseInt(r);
-            
-                if (nb1>= 0 && nb2 >= 0){
-                    switch (op){
-                        case "add":
-                            res = nb1 + nb2;
-                            console.log(res);
-                            alert(res);
-                            break;
-                        case "sou":
-                            res = nb1 - nb2;
-                            console.log(res);
-                            alert(res);
-                            break;
-                        case "mul":
-                            res = nb1 * nb2;
-                            console.log(res);
-                            alert(res);
-                            break;
-                        case "div":
-                            if (nb2 <= 0){
-                                alert("It's over 9000!");
-                                console.log("Error :(")
-                            } else {
-                                res = nb1 / nb2;
-                                console.log(res);
-                                alert(res);
-                            }
-                            break;
-                        case "mod":
-                            if (nb2 <= 0){
-                                alert("It's over 9000!");
-                                console.log("Error :(")
-                            } else {
-                                res = nb1 % nb2;
-                                console.log(res);
-                                alert(res);
-                            }
-                            break;
-                        default:
-                            return("Wrong operation");
-                            break;
-                    }
-                }
-                else
-                    alert("Error :(");
-            
-            
-            }
-        </script>
-	</head>
+function submit(event){
+	event.preventDefault();
+	var op = operator.val();
+	var nb1;
+	var nb2;
+	var res; 
+	res = 0;
+	nb1 = parseInt($('#nb1').val());
+	nb2 = parseInt($('#nb2').val());
+
+	if (nb1>= 0 && nb2 >= 0){
+		switch ($('#operator').val()){
+			case "add":
+				res = nb1 + nb2;
+				console.log(res);
+				alert(res);
+				break;
+			case "sou":
+				res = nb1 - nb2;
+				console.log(res);
+				alert(res);
+				break;
+			case "mul":
+				res = nb1 * nb2;
+				console.log(res);
+				alert(res);
+				break;
+			case "div":
+				if (nb2 <= 0){
+					alert("It's over 9000!");
+					console.log("Error :(")
+				} else {
+					res = nb1 / nb2;
+					console.log(res);
+					alert(res);
+				}  
+				break;
+			case "mod":
+				if (nb2 <= 0){
+					alert("It's over 9000!");
+					console.log("Error :(")
+				} else {
+					res = nb1 % nb2;
+					console.log(res);
+					alert(res);
+				}
+				break;
+			default:
+				return("Wrong operation");
+				break;
+		}
+	}
+	else
+		alert("Error :(");
 
 
-
-	<body>
+}
+		</script>
+</head>
+<body>
 		<div class="output">
-			<form id="calculator" onsubmit="return exec()" method="post">
-
-				<input type="text" id="nb1"/>
-				<select class="align" id="operator">
-					<option value="">------Choose an operator------</option>
-					<option value="add">+</option>
-					<option value="sou">-</option>
-					<option value="mul">*</option>
-					<option value="div">/</option>
-					<option value="mod">%</option>
-				</select>
-				<input type="text" id="nb2"/>
-				<input class="favorite styled" type="submit" id="Try me!" value="Try me!">
-
+			<!-- <form name="calculator" onsubmit="return exec()" method="post"> -->
+				<form id="calculator" action="">
+					<input type="text" id="nb1">
+					<select class="align" id="operator">
+						<option value="">------Choose an operator------</option>
+						<option value="add">+</option>
+						<option value="sou">-</option>
+						<option value="mul">*</option>
+						<option value="div">/</option>
+						<option value="mod">%</option>
+					</select>
+					<input type="text" id="nb2">
+					<input class="favorite styled" type="submit" id="submit" value="Try me!">
 			</form>
 		</div>
-
 	</body>
 </html>
